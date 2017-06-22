@@ -4,7 +4,7 @@ const CLOUD_DELAY_TIME = 6000
 const SPEED = 1.00
 const OPACITY = 0.70
 const INITIAL_CLOUDS = 10
-const CLOUD_IMAGE = 'assets/cloud.png'
+const CLOUD_IMAGE = 'assets/cloud2.png'
 
 const clouds = []
 
@@ -76,11 +76,17 @@ const render = function() {
 
   // Sky
 
-  const skyGradient = ctx.createRadialGradient(
-    initialWidth, initialHeight * 1.8, initialWidth * 1.3,
-    initialWidth, initialHeight * 1.8, 0)
-  skyGradient.addColorStop(0, '#046')
-  skyGradient.addColorStop(0.7, '#DFD')
+  // const skyGradient = ctx.createRadialGradient(
+  //   initialWidth, initialHeight * 1.8, initialWidth * 1.3,
+  //   initialWidth, initialHeight * 1.8, 0)
+  // skyGradient.addColorStop(0, '#046')
+  // skyGradient.addColorStop(0.7, '#DFD')
+  // ctx.fillStyle = skyGradient
+  // ctx.fillRect(0, 0, width, height)
+
+  const skyGradient = ctx.createLinearGradient(0, 0, width, height)
+  skyGradient.addColorStop(0, '#222222')
+  skyGradient.addColorStop(1, '#111111')
   ctx.fillStyle = skyGradient
   ctx.fillRect(0, 0, width, height)
 
